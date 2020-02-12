@@ -62,11 +62,11 @@ a {
     /* animation-delay: 300ms; */
     animation-fill-mode: both;
 }
-@keyframes ani-header{
-    0%{
-        top:-1000px;
+@keyframes ani-header {
+    0% {
+        top: -70px;
     }
-    100%{
+    100% {
         top: 0;   
     }
 }
@@ -77,14 +77,23 @@ a {
     animation-name: ani-logo;
     animation-duration: 500ms;
     animation-delay: 1000ms;
-    animation-fill-mode: both; 
+    animation-fill-mode: both;
+    transition-timing-function: ease-out;
 }
-@keyframes ani-logo{
+@keyframes ani-logo {
     0% {
         left: -250px;
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    80% {
+        left: 5px;
     }
     100% {
         left: 0px;
+        opacity: 1;
     }
   } 
 .logo a {
@@ -122,14 +131,17 @@ a {
     animation-fill-mode: both;
     animation-name: ani-btn;
 }
-@keyframes  ani-btn{
-    0%{
-       right:-250px;
-
+@keyframes  ani-btn {
+    0% {
+        opacity: 0;
+        right: -100px;
     }
-    100%{
-       right: 0;
-
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
     }
 }
 .main-menu__open-btn:hover {
@@ -147,7 +159,7 @@ a {
     transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
-    background: rgba(11, 18, 40, 0.9);
+    background: rgba(11, 18, 40, 0.92);
 }
 
 .is-open .main-menu__menu-panel {
@@ -167,6 +179,7 @@ a {
 .main-menu__menu-item:hover,
 .main-menu__menu-item:focus {
     background-color: #2E437C;
+    outline-color: #0050cd;
     transition: all 0.5s;
 }
 .main-menu__close-btn {
