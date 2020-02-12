@@ -230,7 +230,6 @@ a {
 
 /* ----- PRODUCT DETAIL ----- */
 .product-item--on-click {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -238,7 +237,14 @@ a {
     padding: 40px 20px;
     background-color: rgba(255,255,255,.6);
     text-align: left;
+    transition: all 1s;
+    opacity: 0;
 }
+
+.is-off .product-item--on-click {
+    display: none;
+}
+
 
 .product-item__description {
     display: block;
@@ -270,17 +276,11 @@ a {
 }
 .is-on .product-item--on-click {
     display: block;
-    animation-name: is-on-ani;
-    animation-duration: 1000ms;
+    transition: all 1s;
+    opacity: 1;
+ 
 }
-@keyframes is-on-ani {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.8;
-    }
-}
+
 .product-item__close-btn {
     position: absolute;
     top: 1px;
