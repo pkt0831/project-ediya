@@ -31,7 +31,6 @@ body *, body *::before, body *::after {
     vertical-align: middle;
     font-size: 10rem;
 }
-  
 /* CLEAR FIX */
 .clearfix::after {
     display: block;
@@ -41,7 +40,7 @@ body *, body *::before, body *::after {
 /* RESPONSIVE */
 .responsive {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 /* BASIC */
 a {
