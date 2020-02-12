@@ -1,15 +1,7 @@
 .main {
-    padding-top: 90px;
     background-color: slateblue;
 }
 
 .product-list li {
-    float: left;
     width: 100%;
-    height: 150px;
-    background-color: darksalmon;
-}
-.product-list li:nth-child( even ) {
-    margin-right: 0;
-    background-color: lightseagreen;
 }
