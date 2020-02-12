@@ -20,15 +20,18 @@ body *, body *::before, body *::after {
 }
 /* BUTTON TEXT HIDDEN */
 .btn-text-hide {
-    display: inline-block;
+    font-size: 1px;
+    text-indent: -200px;
+    overflow: hidden;
+    /* display: inline-block;
     margin: 0;
     border: none;
-    width: 15px;
+    width: 100px;
     height: 0;
-    padding-top: 15px;
+    padding-top: 100px;
     overflow: hidden; 
     vertical-align: middle;
-    font-size: 10rem;
+    font-size: 1px; */
 }
   
 /* CLEAR FIX */
@@ -40,7 +43,7 @@ body *, body *::before, body *::after {
 /* RESPONSIVE */
 .responsive {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 /* BASIC */
 a {
@@ -97,27 +100,29 @@ a {
     margin: -10px 0 0 0;
 }
 .main-menu__open-btn {
-    overflow: hidden;
     position: absolute;
-    top: 50%;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    margin: -15px 0 0 0;
+    /* overflow: hidden;     */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 67px;
+    height: 100%;
+    /* margin: -15px 0 0 0; */
     padding: 0;
-    animation-name: open-btn-ani;
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-    animation-delay: 500ms;
-    background-color: #aaa;
+    border: none;
+    background-color: white;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+    background-image: url(../img/menu-open-btn.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
-@keyframes open-btn-ani {
-    0% {
-        right: -40px;
-    }
-    100% {
-        right: 20px;
-    }
+.main-menu__open-btn:hover {
+    background-color: #e5e5e5;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .main-menu__menu-panel {
     position: fixed;
@@ -151,11 +156,16 @@ a {
 }
 .main-menu__close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
+    top: 2px;
+    right: 2px;
+    width: 67px;
+    height: 67px;
     padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url(../img/menu-close-btn.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 /* ----- MAIN ----- */
 .main {
@@ -229,8 +239,17 @@ a {
     background-color: rgba(255,255,255,.6);
     text-align: left;
 }
+
 .product-item__description {
     display: block;
+}
+.product-item--on-click *::selection {
+    background: navy;
+    color: #fff;
+}
+.product-item--on-click *:-moz-selection {
+    background: navy;
+    color: #fff;
 }
 .product-item__description dd:nth-child(2) {
     padding: 0 0 15px 0;
@@ -264,11 +283,25 @@ a {
 }
 .product-item__close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 20px;
-    height: 20px;
+    top: 1px;
+    right: 1px;
+    width: 40px;
+    height: 40px;
     padding: 0;
+    border: none;
+    background-color: transparent;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+    background-image: url(../img/detail-close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-item__close-btn:hover {
+    background-color: #e5e5e5;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .product-item__nutrition-info {
     position: absolute;
