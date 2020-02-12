@@ -165,7 +165,7 @@ a {
 
 /* ----- PRODUCT DETAIL ----- */
 .product-item--on-click {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
