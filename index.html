@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/device-s.css" media="screen and (max-width: 559px)">
+    <link rel="stylesheet" href="./css/device-m.css" media="screen and (min-width: 560px)">
     <title>이디야 커피 (ediya coffee)</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -28,7 +32,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
             <h2 class="a11y-hidden">
                 사이트 메인 메뉴
             </h2>
-            <button class="main-menu__open-btn">
+            <button class="main-menu__open-btn btn-text-hide">
                 사이트 메뉴 열기
             </button>
             <div class="main-menu__menu-panel">
@@ -64,7 +68,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                     </a>
                     </li>
                 </ul>
-                <button class="main-menu__close-btn">
+                <button class="main-menu__close-btn btn-text-hide">
                 사이트 메뉴 닫기
                 </button>
             </div>
@@ -92,27 +96,58 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                             상세설명
                         </span>
                         <dl class="product-item__description">
-                            <dt>상품명</dt>
+                            <dt class="a11y-hidden">상품명</dt>
                             <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
-                            <dt>상품설명</dt>
+                            <dt class="a11y-hidden">상품설명</dt>
                             <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
                         </dl>
                         <span class="a11y-hidden">영양정보</span>
                         <dl class="product-item__nutrition-info">
-                            <dt>칼로리</dt>
-                            <dd><span aria-hidden="true">&lpar;</span>393<span class="a11y-hidden">킬로칼로리</span><span aria-hidden="true">kcal&rpar;</span></dd>
-                            <dt>당류</dt>
-                            <dd>35g</dd>
-                            <dt>단백질</dt>
-                            <dd>7g</dd>
-                            <dt>포화지방</dt>
-                            <dd>18.6g</dd>
-                            <dt>나트륨</dt>
-                            <dd>149mg</dd>
-                            <dt>카페인</dt>
-                            <dd>0mg</dd>
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
                         </dl>
-                        <button class="product-item__close-btn">
+                        <button class="product-item__close-btn btn-text-hide">
                             상세설명 닫기
                         </button>
                     </div>
@@ -130,48 +165,475 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                             상세설명
                         </span>
                         <dl class="product-item__description">
-                            <dt>상품명</dt>
+                            <dt class="a11y-hidden">상품명</dt>
                             <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
-                            <dt>상품설명</dt>
+                            <dt class="a11y-hidden">상품설명</dt>
                             <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
                         </dl>
                         <span class="a11y-hidden">영양정보</span>
                         <dl class="product-item__nutrition-info">
-                            <dt>칼로리</dt>
-                            <dd><span aria-hidden="true">&lpar;</span>393<span class="a11y-hidden">킬로칼로리</span><span aria-hidden="true">kcal&rpar;</span></dd>
-                            <dt>당류</dt>
-                            <dd>35g</dd>
-                            <dt>단백질</dt>
-                            <dd>7g</dd>
-                            <dt>포화지방</dt>
-                            <dd>18.6g</dd>
-                            <dt>나트륨</dt>
-                            <dd>149mg</dd>
-                            <dt>카페인</dt>
-                            <dd>0mg</dd>
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
                         </dl>
-                        <button class="product-item__close-btn">
+                        <button class="product-item__close-btn btn-text-hide">
                             상세설명 닫기
                         </button>
                     </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
                 <!-- PRODUCT ITEM -->
-                <li>aa
+                <li>
+                    <a href="#" title="제품 상세설명 보기" aria-labelledby="icedCherryBlossomLatte" class="product-item">
+                        <h3>
+                            ICED 벚꽃라떼
+                        </h3>
+                        <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
+                    </a>
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                        <span class="a11y-hidden">
+                            상세설명
+                        </span>
+                        <dl class="product-item__description">
+                            <dt class="a11y-hidden">상품명</dt>
+                            <dd>ICED 벚꽃라떼<span class="product-item__en-name">Cherry Blossom Latte</span></dd>
+                            <dt class="a11y-hidden">상품설명</dt>
+                            <dd>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                        </dl>
+                        <span class="a11y-hidden">영양정보</span>
+                        <dl class="product-item__nutrition-info">
+                            <div class="product-item__nutrition-group">
+                                <dt>칼로리</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>393
+                                    <span class="a11y-hidden">킬로칼로리</span>
+                                    <span aria-hidden="true">kcal&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>포화지방</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>18.6
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>당류</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>35
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>나트륨</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>149
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>단백질</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>7
+                                    <span aria-hidden="true">g&rpar;</span>
+                                </dd>
+                            </div>
+                            <div class="product-item__nutrition-group">
+                                <dt>카페인</dt>
+                                <dd>
+                                    <span aria-hidden="true">&lpar;</span>0
+                                    <span aria-hidden="true">mg&rpar;</span>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="product-item__close-btn btn-text-hide">
+                            상세설명 닫기
+                        </button>
+                    </div>
                 </li>
             </ul>
         </div>
