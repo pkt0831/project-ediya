@@ -201,6 +201,14 @@ a {
     background-color: rgba(255,255,255,.6);
     text-align: left;
 }
+.product-item--on-click::selection {
+    background: navy;
+    color: #fff;
+}
+.product-item--on-click::-moz-selection {
+    background: navy;
+    color: #fff;
+}
 .product-item__description {
     display: block;
 }
