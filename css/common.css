@@ -43,7 +43,7 @@ body *, body *::before, body *::after {
 /* RESPONSIVE */
 .responsive {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 /* BASIC */
 a {
@@ -201,16 +201,17 @@ a {
     background-color: rgba(255,255,255,.6);
     text-align: left;
 }
-.product-item--on-click::selection {
-    background: navy;
-    color: #fff;
-}
-.product-item--on-click::-moz-selection {
-    background: navy;
-    color: #fff;
-}
+
 .product-item__description {
     display: block;
+}
+.product-item--on-click *::selection {
+    background: navy;
+    color: #fff;
+}
+.product-item--on-click *:-moz-selection {
+    background: navy;
+    color: #fff;
 }
 .product-item__description dd:nth-child(2) {
     padding: 0 0 15px 0;
@@ -231,7 +232,6 @@ a {
 }
 .is-on .product-item--on-click {
     display: block;
-    opacity: 0.8;
 }
 .product-item__close-btn {
     position: absolute;
