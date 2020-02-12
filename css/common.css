@@ -61,9 +61,7 @@ a {
     margin-top: -10px;
     /* display: none; */
 }
-.main-menu {
-    /* display: none; */
-}
+
 .main-menu__open-btn {
     position: absolute;
     top: 50%;
