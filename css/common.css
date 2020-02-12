@@ -55,16 +55,38 @@ a {
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
+    transition-duration: 1000ms;
+    animation-name: ani-header;
+}
+@keyframes ani-header{
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 0px;
+    }
 }
 .logo {
     position: relative;
     width: 210px;
     font-size: 1rem;
+    background-color: #737373;
+    animation-name: ani-logo;
+    transition-duration: 500ms;
 }
+ @keyframes ani-logo{
+    0% {
+        left: -1000px;
+    }
+    100% {
+        left: 0px;
+    }
+  }
 .logo a {
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
+    overflow: hidden;
 }
 .logo img {
     position: absolute;
@@ -72,6 +94,7 @@ a {
     left: 0;
     margin: -10px 0 0 0;
 }
+
 .main-menu {
 }
 .main-menu__open-btn {
@@ -83,7 +106,19 @@ a {
     height: 30px;
     margin: -15px 0 0 0;
     padding: 0;
+    /* right: -100px;
+    animation: ani-btn; */
 }
+/* @keyframes ani-btn{
+    0%{
+        right: -100px;
+    }
+    100%{
+        left: 1000px;
+
+    }
+    
+} */
 .main-menu__menu-panel {
     position: fixed;
     top: 0;
