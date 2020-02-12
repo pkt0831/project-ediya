@@ -101,13 +101,11 @@ a {
 }
 .main-menu__open-btn {
     position: absolute;
-    /* overflow: hidden;     */
     top: 0;
     right: 0;
     bottom: 0;
     width: 67px;
     height: 100%;
-    /* margin: -15px 0 0 0; */
     padding: 0;
     border: none;
     background-color: white;
@@ -121,15 +119,14 @@ a {
     animation-delay: 1000ms;
     animation-fill-mode: both;
     animation-name: ani-btn;
+    cursor: pointer;
 }
-@keyframes  ani-btn{
-    0%{
+@keyframes  ani-btn {
+    0% {
        right:-250px;
-
     }
-    100%{
+    100% {
        right: 0;
-
     }
 }
 .main-menu__open-btn:hover {
@@ -152,14 +149,13 @@ a {
 
 .is-open .main-menu__menu-panel {
     transform: translate(0);
-    /* transition-duration: 0.7s; */
 }
 
 .main-menu__menu-item {
     display: block;
     width: 100%;
     padding: 17px;
-    border: 1px solid rgba(33, 55, 120, 0.5);
+    border-bottom: 1px solid rgba(33, 55, 120, 0.5);
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
@@ -173,19 +169,21 @@ a {
     position: absolute;
     top: 2px;
     right: 2px;
-    width: 67px;
-    height: 67px;
+    width: 64px;
+    height: 65px;
     padding: 0;
     border: none;
     background-color: transparent;
     background-image: url(../img/menu-close-btn.png);
     background-position: center;
     background-repeat: no-repeat;
+    transform: scale(1);
+    transition-duration: 500ms;
     cursor: pointer;
 }
 .main-menu__close-btn:hover {
-    background-size: 43%;
-    transition: all 0.5s;
+    transform: scale(1.1);
+    transition-duration: 500ms;
 }
 /* ----- MAIN ----- */
 .main {
@@ -316,6 +314,7 @@ a {
     background-image: url(../img/detail-close.png);
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .product-item__close-btn:hover {
     background-color: #e5e5e5;
