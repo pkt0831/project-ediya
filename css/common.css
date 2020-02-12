@@ -42,8 +42,8 @@ body *, body *::before, body *::after {
 }
 /* RESPONSIVE */
 .responsive {
-    max-width: 100%;
-    height: 100%;
+    max-width: 90%;
+    height: 90%;
 }
 /* BASIC */
 a {
@@ -58,6 +58,7 @@ a {
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
+<<<<<<< HEAD
     animation-name: ani-header;
     animation-duration: 700ms;
     /* animation-delay: 300ms; */
@@ -69,12 +70,26 @@ a {
     }
     100%{
         top: 0;   
+=======
+    animation-name: header-ani;
+    animation-delay: 200ms;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+@keyframes header-ani {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+>>>>>>> ee664509703f5057e1bf384ce1733fbd4131d54e
     }
 }
 .logo {
     position: relative;
     width: 210px;
     font-size: 1rem;
+<<<<<<< HEAD
     animation-name: ani-logo;
     animation-duration: 500ms;
     animation-delay: 1000ms;
@@ -88,6 +103,21 @@ a {
         left: 0px;
     }
   } 
+=======
+    animation-name: logo-ani;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-delay: 500ms;
+}
+@keyframes logo-ani {
+    0% {
+        left: -300px;
+    }
+    100% {
+        left: 0;
+    }
+}
+>>>>>>> ee664509703f5057e1bf384ce1733fbd4131d54e
 .logo a {
     display: block;
     padding: 5px 0;
@@ -202,6 +232,20 @@ a {
     margin: 0 10px 10px 0;
     background-color: #f5f5f5;
     text-align: center;
+    animation-name: product-animation;
+    animation-delay: 1500ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+}
+@keyframes product-animation {
+    0% {
+        top: 50px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
 }
 .product-list li:nth-child(even) {
     margin-right: 0;
@@ -271,6 +315,16 @@ a {
 }
 .is-on .product-item--on-click {
     display: block;
+    animation-name: is-on-ani;
+    animation-duration: 1000ms;
+}
+@keyframes is-on-ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
 }
 .product-item__close-btn {
     position: absolute;
