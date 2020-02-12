@@ -71,8 +71,6 @@ a {
     left: 0;
     margin: -10px 0 0 0;
 }
-.main-menu {
-}
 .main-menu__open-btn {
     overflow: hidden;
     position: absolute;
@@ -94,6 +92,12 @@ a {
     padding: 60px 0 0 0;
     background: rgba(11, 18, 40, 0.9);
 }
+
+.is-open .main-menu__menu-panel {
+    transform: translate(0);
+    /* transition-duration: 0.7s; */
+}
+
 .main-menu__menu-item {
     display: block;
     width: 100%;
@@ -192,6 +196,10 @@ a {
     margin: 14px 0 0 0;
     font-size: 16px;
     line-height: 23px;
+}
+.is-on .product-item--on-click {
+    display: block;
+    opacity: 0.8;
 }
 .product-item__close-btn {
     position: absolute;
