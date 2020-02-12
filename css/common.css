@@ -58,7 +58,6 @@ a {
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
-<<<<<<< HEAD
     animation-name: ani-header;
     animation-duration: 700ms;
     /* animation-delay: 300ms; */
@@ -70,26 +69,12 @@ a {
     }
     100%{
         top: 0;   
-=======
-    animation-name: header-ani;
-    animation-delay: 200ms;
-    animation-duration: 500ms;
-    animation-fill-mode: both;
-}
-@keyframes header-ani {
-    0% {
-        top: -100px;
-    }
-    100% {
-        top: 0;
->>>>>>> ee664509703f5057e1bf384ce1733fbd4131d54e
     }
 }
 .logo {
     position: relative;
     width: 210px;
     font-size: 1rem;
-<<<<<<< HEAD
     animation-name: ani-logo;
     animation-duration: 500ms;
     animation-delay: 1000ms;
@@ -103,21 +88,6 @@ a {
         left: 0px;
     }
   } 
-=======
-    animation-name: logo-ani;
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-    animation-delay: 500ms;
-}
-@keyframes logo-ani {
-    0% {
-        left: -300px;
-    }
-    100% {
-        left: 0;
-    }
-}
->>>>>>> ee664509703f5057e1bf384ce1733fbd4131d54e
 .logo a {
     display: block;
     padding: 5px 0;
