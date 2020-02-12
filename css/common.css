@@ -17,7 +17,6 @@ body *, body *::before, body *::after {
     margin: -1px;
     clip: rect(0,0,0,0);
     clip-path: polygon(0 0, 0 0, 0 0);
-    
 }
 /* BUTTON TEXT HIDDEN */
 .btn-text-hide {
@@ -140,6 +139,16 @@ a {
 }
 .product-list li:nth-child(even) {
     margin-right: 0;
+}
+.product-list li a img {
+    transform:scale(1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+.product-list li a:hover img {
+    transform:scale(1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
 }
 .product-item {
     display: block;
