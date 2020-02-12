@@ -33,7 +33,6 @@ body *, body *::before, body *::after {
     vertical-align: middle;
     font-size: 1px; */
 }
-  
 /* CLEAR FIX */
 .clearfix::after {
     display: block;
@@ -165,10 +164,11 @@ a {
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    
 }
-.main-menu__menu-item:hover {
+.main-menu__menu-item:hover,
+.main-menu__menu-item:focus {
     background-color: #2E437C;
+    transition: all 0.5s;
 }
 .main-menu__close-btn {
     position: absolute;
@@ -183,6 +183,10 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+}
+.main-menu__close-btn:hover {
+    background-size: 43%;
+    transition: all 0.5s;
 }
 /* ----- MAIN ----- */
 .main {
