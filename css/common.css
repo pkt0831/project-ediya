@@ -40,7 +40,22 @@ a {
     padding: 10px 20px;
     background-color: steelblue;
     z-index: 999;
+    animation-name: ani-header;
+    /* transition-property: height, padding; */
+    /* transition-duration: 1000ms; */
+    /* transition-delay: 200ms, 0ms; */
+    /* transition-timing-function: ease-in-out; */
 }
+/* @keyframes ani-header{
+    from{
+        margin-top: -100px;
+        width: 50%;
+    }
+    to {
+        margin-left:0%;
+        width: 100%;
+    }
+} */
 
 .logo {
     position: relative;
@@ -48,19 +63,39 @@ a {
     background-color: thistle;
     font-size: 1rem;
     /* margin: 10px; */
+    
 }
+ 
 .logo a {
+    position: absolute;
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
+    overflow: hidden;
+    /*
+    transition-property: height, padding;
+    transition-duration: 3000ms;
+    transition-delay: 200ms, 0ms;
+    transition-timing-function: ease-in-out;
+    */
 }
 .logo img {
-    position: absolute;
-    top: 50%;
-    left: 0;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 0; */
     margin-top: -10px;
     /* display: none; */
+    animation-name: ani-logo; 
+    transition-duration: 3000ms;
 }
+@keyframes ani-logo{
+    0%{
+        left: -1000px;
+    }
+    100%{ 
+        left: 0;   
+    }
+} 
 .main-menu {
     /* display: none; */
 }
@@ -75,7 +110,21 @@ a {
     text-indent: -200px;
     overflow: hidden;
     padding: 0;
+    /* animation-name: ani-btn;
+    transition-property: height, padding;
+    transition-duration: 3000ms; */
+    /* transition-delay: 200ms, 0ms;
+    transition-timing-function: ease-in-out; */
 }
+/* @keyframes ani-btn{
+    from{
+        transform: translate(-100,-100);
+
+    }
+    to{
+        transform: translate(100px,100px);
+    } 
+} */
 .main-menu__menu-panel {
     position: fixed;
     top: 0;
