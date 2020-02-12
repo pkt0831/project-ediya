@@ -13,6 +13,15 @@ const productItemCloseBtn = mainContainer.querySelectorAll('.product-item__close
 // 렌더 함수
 function render() {
 
+    //처음에 등장하는 productItem
+    for (let i = 0; i < productItem.length; i++) {
+        let item = productItem[i];
+        let counter = 400 * i;
+        let delayCounter = 1000 + counter + 'ms';
+        item.style.animationDelay = delayCounter;
+
+    }
+
     menuOpenBtn.addEventListener('click', openMenuPanel);
     menuCloseBtn.addEventListener('click', closeMenuPanel);
 
