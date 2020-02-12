@@ -1,6 +1,8 @@
-/* "레이아웃 > BOX > 배경 > 폰트 > 
-기타 (벤더속성과 핵속성은 해당 속성 뒤에 선언한다.)" */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Roboto+Condensed:300,400,700&display=swap&subset=korean');
 
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
 /* BORDER-BOX */
 body *, body *::before, body *::after {
     box-sizing: border-box;
@@ -9,18 +11,31 @@ body *, body *::before, body *::after {
 /* TEXT HIDDEN */ 
 .a11y-hidden {
     position: absolute;
+    overflow: hidden;
     width: 1px;
     height: 1px;
-    overflow: hidden;
     margin: -1px;
     clip: rect(0,0,0,0);
     clip-path: polygon(0 0, 0 0, 0 0);
 }
+/* BUTTON TEXT HIDDEN */
+.btn-text-hide {
+    display: inline-block;
+    margin: 0;
+    border: none;
+    width: 15px;
+    height: 0;
+    padding-top: 15px;
+    overflow: hidden; 
+    vertical-align: middle;
+    font-size: 10rem;
+}
+  
 /* CLEAR FIX */
 .clearfix::after {
-    content: "";
     display: block;
     clear: both;
+    content: "";
 }
 /* RESPONSIVE */
 .responsive {
@@ -29,25 +44,22 @@ body *, body *::before, body *::after {
 }
 /* BASIC */
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 /* ----- HEADER ----- */
 .header {
     position: fixed;
-    width: 100%;
-    /* opacity: .8; */
-    padding: 10px 20px;
-    background-color: steelblue;
     z-index: 999;
+    width: 100%;
+    padding: 20.5px 26px;
+    border-bottom: 1px solid #E0E0E0;
+    background-color: rgba(255, 255, 255, .7);
 }
-
 .logo {
     position: relative;
     width: 210px;
-    background-color: thistle;
     font-size: 1rem;
-    /* margin: 10px; */
 }
 .logo a {
     display: block;
@@ -58,22 +70,18 @@ a {
     position: absolute;
     top: 50%;
     left: 0;
-    margin-top: -10px;
-    /* display: none; */
+    margin: -10px 0 0 0;
 }
 .main-menu {
-    /* display: none; */
 }
 .main-menu__open-btn {
+    overflow: hidden;
     position: absolute;
     top: 50%;
-    margin-top: -15px;
-    right: 20px; 
+    right: 20px;
     width: 30px;
     height: 30px;
-    font-size: 1px;
-    text-indent: -200px;
-    overflow: hidden;
+    margin: -15px 0 0 0;
     padding: 0;
 }
 .main-menu__menu-panel {
@@ -85,16 +93,20 @@ a {
     transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
-    background-color: cadetblue;
+    background: rgba(11, 18, 40, 0.9);
 }
 .main-menu__menu-item {
     display: block;
-    padding: 15px;
     width: 100%;
-    background-color: cornflowerblue;
+    padding: 17px;
+    border: 1px solid rgba(33, 55, 120, 0.5);
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    border-bottom: 1px solid #000;
+    
+}
+.main-menu__menu-item:hover {
+    background-color: #2E437C;
 }
 .main-menu__close-btn {
     position: absolute;
@@ -102,44 +114,46 @@ a {
     right: 20px;
     width: 30px;
     height: 30px;
-    font-size: 1px;
-    text-indent: -200px;
-    overflow: hidden;
     padding: 0;
 }
 /* ----- MAIN ----- */
 .main {
-    padding-top: 90px;
-    background-color: teal;
+    padding: 90px 0;
 }
 .main__container {
     max-width: 840px;
     margin: 0 auto;
     padding: 0;
-    background-color:darkkhaki;
 }
 .product-list {
     width: 100%;
     padding: 15px;
-    background-color: lightskyblue;
 }
 .product-list li {
     float: left;
     position: relative;
-    width: calc((100% - 15px)/2);
-    margin-right: 15px;
-    margin-bottom: 15px;
+    width: calc((100% - 10px)/2);
+    margin: 0 10px 10px 0;
+    background-color: #f5f5f5;
     text-align: center;
-    background-color: darksalmon;
 }
 .product-list li:nth-child(even) {
     margin-right: 0;
-    background-color: lightseagreen;
+}
+.product-list li a img {
+    transform:scale(1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+.product-list li a:hover img {
+    transform:scale(1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
 }
 .product-item {
     display: block;
     width: 100%;
-    height: 360px;
+    height: 361px;
     padding: 15px 60px 72px 60px;
 }
 .product-item h3 {
@@ -147,7 +161,6 @@ a {
     bottom: 20px;
     left: 0;
     width: 100%;
-    background-color: slategray;
 }
 
 /* ----- PRODUCT DETAIL ----- */
@@ -156,9 +169,30 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    height: 360px;
+    height: 361px;
     padding: 40px 20px;
-    background-color: rgba(255,255,255,.7);
+    background-color: rgba(255,255,255,.6);
+    text-align: left;
+}
+.product-item__description {
+    display: block;
+}
+.product-item__description dd:nth-child(2) {
+    padding: 0 0 15px 0;
+    border-bottom: 2px solid #202023;
+    font-size: 18px;
+    color: #202022;
+    line-height: 20px;
+}
+.product-item__en-name {
+    display: block;
+    font-size: 14px;
+    color: #737373;
+}
+.product-item__description dd:nth-child(4) {
+    margin: 14px 0 0 0;
+    font-size: 16px;
+    line-height: 23px;
 }
 .product-item__close-btn {
     position: absolute;
@@ -166,8 +200,32 @@ a {
     right: 20px;
     width: 20px;
     height: 20px;
-    font-size: 1px;
-    text-indent: -200px;
-    overflow: hidden;
     padding: 0;
+}
+.product-item__nutrition-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 17px 40px;
+    background-color: #f8f8f8;
+    font-size: 0;
+}
+.product-item__nutrition-group {
+    width: 50%;
+    margin: 0;
+    font-size: 13px;
+    line-height: 19px;
+}
+.product-item__nutrition-group:nth-child(odd) {
+    border-right: 1px solid #999;
+}
+.product-item__nutrition-group dt {
+    padding: 0 35px 0 0;
+}
+.product-item__nutrition-group:nth-child(even) {
+    padding: 0 0 0 25px;
+}
+.product-item__nutrition-info * {
+    display: inline-block;
 }
