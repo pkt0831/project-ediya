@@ -58,40 +58,41 @@ a {
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
-    animation-name: header-ani;
-    animation-delay: 200ms;
-    animation-duration: 500ms;
+    animation-name: ani-header;
+    animation-duration: 700ms;
+    /* animation-delay: 300ms; */
     animation-fill-mode: both;
 }
-@keyframes header-ani {
-    0% {
-        top: -100px;
+@keyframes ani-header{
+    0%{
+        top:-1000px;
     }
-    100% {
-        top: 0;
+    100%{
+        top: 0;   
     }
 }
 .logo {
     position: relative;
     width: 210px;
     font-size: 1rem;
-    animation-name: logo-ani;
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-    animation-delay: 500ms;
+    animation-name: ani-logo;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both; 
 }
-@keyframes logo-ani {
+@keyframes ani-logo{
     0% {
-        left: -300px;
+        left: -250px;
     }
     100% {
-        left: 0;
+        left: 0px;
     }
-}
+  } 
 .logo a {
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
+    overflow: hidden;
 }
 .logo img {
     position: absolute;
@@ -117,6 +118,20 @@ a {
     background-image: url(../img/menu-open-btn.png);
     background-position: center;
     background-repeat: no-repeat;
+    animation-duration: 400ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both;
+    animation-name: ani-btn;
+}
+@keyframes  ani-btn{
+    0%{
+       right:-250px;
+
+    }
+    100%{
+       right: 0;
+
+    }
 }
 .main-menu__open-btn:hover {
     background-color: #e5e5e5;
