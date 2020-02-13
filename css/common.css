@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Roboto+Condensed:300,400,700&display=swap&subset=korean');
-
+/* 2020-02-13 PKT CSS 유효성 검사에서 해석 오류가남. */
 body {
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -17,20 +17,23 @@ body *, body *::before, body *::after {
     margin: -1px;
     clip: rect(0,0,0,0);
     clip-path: polygon(0 0, 0 0, 0 0);
+    /* 2020-02-13 PKT clip-path 존재하지않는 속성이라고 뜸. 권장사항이고, CSS유효검사기에서는 아직 제정된 규칙이 아니라고 함.*/
 }
 /* BUTTON TEXT HIDDEN */
-.btn-text-hide {
-    display: inline-block;
-    margin: 0;
-    border: none;
-    width: 15px;
-    height: 0;
-    padding-top: 15px;
-    overflow: hidden; 
-    vertical-align: middle;
-    font-size: 10rem;
+.btn__text--hide {
+    text-indent: -200px;
+    font-size: 1px;
+    overflow: hidden;
 }
-  
+/* BUTTON STYLE */
+.btn--style {
+    /* 2020-02-13 YSK 버튼 모듈화 */
+    border: none;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
 /* CLEAR FIX */
 .clearfix::after {
     display: block;
@@ -40,31 +43,73 @@ body *, body *::before, body *::after {
 /* RESPONSIVE */
 .responsive {
     max-width: 100%;
-    height: auto;
+    height: 100%;
+}
+/* OUTLINE */
+button:focus,
+a:focus {
+    outline-color: #0050cd;
 }
 /* BASIC */
 a {
     color: inherit;
     text-decoration: none;
 }
+
 /* ----- HEADER ----- */
 .header {
+    /* 2020-02-12 PKT 헤더 애니메이션 동작 작성. */
     position: fixed;
-    z-index: 999;
+    z-index: 10;
     width: 100%;
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
+    animation-name: ani-header;
+    animation-duration: 700ms;
+    animation-fill-mode: both;
+}
+@keyframes ani-header {
+    0% {
+        top: -70px;
+    }
+    100% {
+        top: 0;   
+    }
 }
 .logo {
+    /* 2020-02-12 PKT 로고 애니메이션 좌측 화면 밖에서 안쪽으로 작성. */
     position: relative;
     width: 210px;
     font-size: 1rem;
+    animation-name: ani-logo;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both;
+    transition-timing-function: ease-out;
 }
+@keyframes ani-logo {
+    0% {
+        left: -250px;
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    80% {
+        left: 5px;
+    }
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+} 
 .logo a {
     display: block;
+    /* position: absolute; */
     padding: 5px 0;
     text-indent: 1rem;
+    /* overflow: hidden; */
 }
 .logo img {
     position: absolute;
@@ -72,62 +117,95 @@ a {
     left: 0;
     margin: -10px 0 0 0;
 }
-
 .main-menu__open-btn {
-    overflow: hidden;
+    /* 2020-02-12 PKT 오픈버튼 우측 화면 밖에서 안쪽으로 애니메이션 작성. */
+    /* 2020-02-12 YSK 버튼 디자인 설정 */
     position: absolute;
-    top: 50%;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    margin: -15px 0 0 0;
-    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 67px;
+    height: 100%;
+    background-image: url(../img/menu-open-btn.png);
+    transition-duration: 300ms;
+    animation-duration: 400ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both;
+    animation-name: ani-btn;
+    cursor: pointer;
+}
+@keyframes  ani-btn {
+    0% {
+        opacity: 0;
+        right: -100px;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+.main-menu__open-btn:hover {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
+    background-color: #e5e5e5;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .main-menu__menu-panel {
+    /* display: none; */
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
-    transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
-    background: rgba(11, 18, 40, 0.9);
+    background: rgba(11, 18, 40, 0.92);
+    transform: translate(100%);
 }
-
 .is-open .main-menu__menu-panel {
+    display: block;
     transform: translate(0);
-    transition-duration: 0.7s;
 }
-
 .main-menu__menu-item {
     display: block;
     width: 100%;
     padding: 17px;
-    border: 1px solid rgba(33, 55, 120, 0.5);
+    border-bottom: 1px solid rgba(33, 55, 120, 0.5);
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    
 }
-.main-menu__menu-item:hover {
+.main-menu__menu-item:hover,
+.main-menu__menu-item:focus {
     background-color: #2E437C;
+    transition: all 0.5s;
 }
 .main-menu__close-btn {
+    /* 2020-02-12 YSK 버튼 디자인, 애니메이션 설정 */
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    padding: 0;
+    top: 2px;
+    right: 2px;
+    width: 64px;
+    height: 65px;
+    background-image: url(../img/menu-close-btn.png );
+    transform: scale(1);
+    transition-duration: 500ms;
+    cursor: pointer;
 }
+.main-menu__close-btn:hover, .main-menu__close-btn:focus {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
+    transform: scale(1.2);
+    transition-duration: 500ms;
+}
+
 /* ----- MAIN ----- */
-.main {
-    padding: 90px 0;
-}
 .main__container {
     max-width: 840px;
-    margin: 0 auto;
+    margin: 90px auto 40px auto;
     padding: 0;
 }
 .product-list {
@@ -141,25 +219,47 @@ a {
     margin: 0 10px 10px 0;
     background-color: #f5f5f5;
     text-align: center;
+    animation-name: product-animation;
+    animation-delay: 1500ms;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+}
+@media screen and (max-width: 559px) { 
+    .product-list li {
+        width: 100%;
+    }
+}
+@keyframes product-animation {
+    0% {
+        top: 50px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
 }
 .product-list li:nth-child(even) {
     margin-right: 0;
 }
 .product-list li a img {
+    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
-.product-list li a:hover img {
+.product-list li a:hover img, .product-list li a:focus img {
+    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1.1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .product-item {
     display: block;
     width: 100%;
     height: 361px;
-    /* padding: 15px 60px 72px 60px; */
+    padding: 25px 60px 60px 60px;
+}
+.product-item * {
+    cursor: pointer;
 }
 .product-item h3 {
     position: absolute;
@@ -170,17 +270,36 @@ a {
 
 /* ----- PRODUCT DETAIL ----- */
 .product-item--on-click {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     height: 361px;
     padding: 40px 20px;
     background-color: rgba(255,255,255,.6);
     text-align: left;
+    transition: all 0.6s;
+    opacity: 0;
+}
+.is-off .product-item--on-click {
+    display: none;
+    border: 1px solid #dddddd;
+}
+.is-on .product-item--on-click {
+    display: block;
+    transition: all 0.5s;
+    opacity: 1;
 }
 .product-item__description {
     display: block;
+}
+.product-item--on-click *::selection {
+    background: navy;
+    color: #fff;
+}
+.product-item--on-click *:-moz-selection {
+    background: navy;
+    color: #fff;
 }
 .product-item__description dd:nth-child(2) {
     padding: 0 0 15px 0;
@@ -199,24 +318,62 @@ a {
     font-size: 16px;
     line-height: 23px;
 }
-.is-on .product-item--on-click {
-    display: block;
-    transition-duration: 5s;
-    opacity: 0.8;
-}
 .product-item__close-btn {
+    /* 2020-02-12 YSK 버튼 디자인, 애니메이션 설정 */
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 20px;
-    height: 20px;
-    padding: 0;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px; 
+    background-image: url(../img/detail-close.png);
+    transition-duration: 300ms;
+    cursor: pointer;
 }
+.product-item__close-btn:hover {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
+    background-color: #e5e5e5;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+}
+
 .product-item__nutrition-info {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    height: 25%;
+    padding: 17px 25px;
+    background-color: #f8f8f8;
+    font-size: 0;
+}
+.product-item__nutrition-group {
+    width: 50%;
+    margin: 0;
+    font-size: 13px;
+    line-height: 19px;
+    
+    padding: 0 0 0 25px;
+}
+.product-item__nutrition-group dt {
+    width: 70px;
+}
+.product-item__nutrition-group:nth-child(odd) {
+    border-right: 1px solid #999;
+}
+/* .product-item__nutrition-group dt {
+}
+.product-item__nutrition-group:nth-child(even) {
+    padding: 0 0 0 25px;
+} */
+.product-item__nutrition-info * {
+    display: inline-block;
+}
+/* .product-item__nutrition-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 25%;
     padding: 17px 40px;
     background-color: #f8f8f8;
     font-size: 0;
@@ -240,4 +397,4 @@ a {
 }
 .product-item__nutrition-info * {
     display: inline-block;
-}
+} */
