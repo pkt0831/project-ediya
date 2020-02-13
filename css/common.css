@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Roboto+Condensed:300,400,700&display=swap&subset=korean');
-
+/* CSS 유효성 검사에서 해석 오류가남. */
 body {
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -17,6 +17,7 @@ body *, body *::before, body *::after {
     margin: -1px;
     clip: rect(0,0,0,0);
     clip-path: polygon(0 0, 0 0, 0 0);
+    /* clip-path 존재하지않는 속성이라고 뜸. 권장사항이고, CSS유효검사기에서는 아직 제정된 규칙이 아니라고 함.*/
 }
 /* BUTTON TEXT HIDDEN */
 .btn-text-hide {
@@ -102,6 +103,7 @@ a {
     }
   } 
 .logo a {
+    position: absolute;
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
@@ -343,6 +345,7 @@ a {
 .product-item__close-btn:hover {
     background-color: #e5e5e5;
     transition-property: background-color;
+    /* bug-fix transition-property 이부분 CSS 유효성 검사 걸림 작동안함 삭제요망. */
     transition-timing-function: ease-in-out;
     transition-duration: 300ms;
 }
