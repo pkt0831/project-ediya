@@ -258,6 +258,9 @@ a {
     height: 361px;
     padding: 25px 60px 60px 60px;
 }
+.product-item * {
+    cursor: pointer;
+}
 .product-item h3 {
     position: absolute;
     bottom: 20px;
