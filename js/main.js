@@ -32,7 +32,6 @@ function render() {
     for (let i = 0; i < productItem.length; i++) {
         let item = productItem[i];
         item.addEventListener('click', ItemOn);
-        console.log(111);
     }
 
     for (let i = 0; i < productItemCloseBtn.length; i++) {
@@ -107,16 +106,13 @@ function closeMenuPanel(e) {
 
 // 음료를 클릭할때 상세설명창이 올라옴
 function ItemOn(e) {
-    console.log(e);
     e.preventDefault();
-    console.log(e);
     e.stopPropagation();
 
     let _this = e.target;
-    console.log(_this);
     let _parent = _this.closest('li');
-    console.log(_parent);
     _parent.classList.remove('is-off');
+    // _parent.classList.add('is-on');
 
     let itemDelay = window.setTimeout(function() {
         _parent.classList.add('is-on');
@@ -136,7 +132,7 @@ function ItemOff(e) {
         _parent.classList.add('is-off');
         let _container = _this.closest('div');
         _container.setAttribute('aria-hidden', 'true');
-    }, 1000);
+    }, 600);
 }
 
 
