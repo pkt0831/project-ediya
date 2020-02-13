@@ -60,6 +60,7 @@ function ItemOn(e) {
     let _this = e.target;
     let _parent = _this.closest('li');
     _parent.classList.add('is-on');
+    _parent.classList.remove('is-off');
    
 }
 
