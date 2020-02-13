@@ -33,7 +33,6 @@ body *, body *::before, body *::after {
     vertical-align: middle;
     font-size: 1px; */
 }
-  
 /* CLEAR FIX */
 .clearfix::after {
     display: block;
@@ -44,6 +43,11 @@ body *, body *::before, body *::after {
 .responsive {
     max-width: 100%;
     height: 100%;
+}
+/* OUTLINE */
+button:focus,
+a:focus {
+    outline-color: #0050cd;
 }
 /* BASIC */
 a {
@@ -58,40 +62,50 @@ a {
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
-    animation-name: header-ani;
-    animation-delay: 200ms;
-    animation-duration: 500ms;
+    animation-name: ani-header;
+    animation-duration: 700ms;
+    /* animation-delay: 300ms; */
     animation-fill-mode: both;
 }
-@keyframes header-ani {
+@keyframes ani-header {
     0% {
-        top: -100px;
+        top: -70px;
     }
     100% {
-        top: 0;
+        top: 0;   
     }
 }
 .logo {
     position: relative;
     width: 210px;
     font-size: 1rem;
-    animation-name: logo-ani;
-    animation-duration: 1000ms;
+    animation-name: ani-logo;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
     animation-fill-mode: both;
-    animation-delay: 500ms;
+    transition-timing-function: ease-out;
 }
-@keyframes logo-ani {
+@keyframes ani-logo {
     0% {
-        left: -300px;
+        left: -250px;
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    80% {
+        left: 5px;
     }
     100% {
-        left: 0;
+        left: 0px;
+        opacity: 1;
     }
-}
+  } 
 .logo a {
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
+    overflow: hidden;
 }
 .logo img {
     position: absolute;
@@ -101,13 +115,11 @@ a {
 }
 .main-menu__open-btn {
     position: absolute;
-    /* overflow: hidden;     */
     top: 0;
     right: 0;
     bottom: 0;
     width: 67px;
     height: 100%;
-    /* margin: -15px 0 0 0; */
     padding: 0;
     border: none;
     background-color: white;
@@ -117,6 +129,24 @@ a {
     background-image: url(../img/menu-open-btn.png);
     background-position: center;
     background-repeat: no-repeat;
+    animation-duration: 400ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both;
+    animation-name: ani-btn;
+    cursor: pointer;
+}
+@keyframes  ani-btn {
+    0% {
+        opacity: 0;
+        right: -100px;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
 }
 .main-menu__open-btn:hover {
     background-color: #e5e5e5;
@@ -133,39 +163,46 @@ a {
     transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
-    background: rgba(11, 18, 40, 0.9);
+    background: rgba(11, 18, 40, 0.92);
 }
 
 .is-open .main-menu__menu-panel {
     transform: translate(0);
-    /* transition-duration: 0.7s; */
 }
 
 .main-menu__menu-item {
     display: block;
     width: 100%;
     padding: 17px;
-    border: 1px solid rgba(33, 55, 120, 0.5);
+    border-bottom: 1px solid rgba(33, 55, 120, 0.5);
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    
 }
-.main-menu__menu-item:hover {
+.main-menu__menu-item:hover,
+.main-menu__menu-item:focus {
     background-color: #2E437C;
+    transition: all 0.5s;
 }
 .main-menu__close-btn {
     position: absolute;
     top: 2px;
     right: 2px;
-    width: 67px;
-    height: 67px;
+    width: 64px;
+    height: 65px;
     padding: 0;
     border: none;
     background-color: transparent;
     background-image: url(../img/menu-close-btn.png);
     background-position: center;
     background-repeat: no-repeat;
+    transform: scale(1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.main-menu__close-btn:hover {
+    transform: scale(1.2);
+    transition-duration: 500ms;
 }
 /* ----- MAIN ----- */
 .main {
@@ -219,7 +256,7 @@ a {
     display: block;
     width: 100%;
     height: 361px;
-    /* padding: 15px 60px 72px 60px; */
+    padding: 25px 60px 60px 60px;
 }
 .product-item h3 {
     position: absolute;
@@ -243,6 +280,7 @@ a {
 
 .is-off .product-item--on-click {
     display: none;
+    border: 1px solid #dddddd;
 }
 
 
@@ -283,19 +321,20 @@ a {
 
 .product-item__close-btn {
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 0;
+    right: 0;
     width: 40px;
     height: 40px;
     padding: 0;
     border: none;
-    background-color: transparent;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    transition-duration: 300ms;
+    background-color: transparent;    
     background-image: url(../img/detail-close.png);
     background-position: center;
     background-repeat: no-repeat;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+    cursor: pointer;
 }
 .product-item__close-btn:hover {
     background-color: #e5e5e5;
