@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Roboto+Condensed:300,400,700&display=swap&subset=korean');
-
 body {
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -19,19 +18,18 @@ body *, body *::before, body *::after {
     clip-path: polygon(0 0, 0 0, 0 0);
 }
 /* BUTTON TEXT HIDDEN */
-.btn-text-hide {
-    font-size: 1px;
+.btn__text--hide {
     text-indent: -200px;
+    font-size: 1px;
     overflow: hidden;
-    /* display: inline-block;
-    margin: 0;
+}
+/* BUTTON STYLE */
+.btn--style {
     border: none;
-    width: 100px;
-    height: 0;
-    padding-top: 100px;
-    overflow: hidden; 
-    vertical-align: middle;
-    font-size: 1px; */
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
 /* CLEAR FIX */
 .clearfix::after {
@@ -54,17 +52,17 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
 /* ----- HEADER ----- */
 .header {
     position: fixed;
-    z-index: 999;
+    z-index: 10;
     width: 100%;
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
     animation-name: ani-header;
     animation-duration: 700ms;
-    /* animation-delay: 300ms; */
     animation-fill-mode: both;
 }
 @keyframes ani-header {
@@ -100,12 +98,11 @@ a {
         left: 0px;
         opacity: 1;
     }
-  } 
+} 
 .logo a {
     display: block;
     padding: 5px 0;
     text-indent: 1rem;
-    overflow: hidden;
 }
 .logo img {
     position: absolute;
@@ -120,15 +117,8 @@ a {
     bottom: 0;
     width: 67px;
     height: 100%;
-    padding: 0;
-    border: none;
-    background-color: white;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
+    background-image: url('../img/menu-open-btn.png');
     transition-duration: 300ms;
-    background-image: url(../img/menu-open-btn.png);
-    background-position: center;
-    background-repeat: no-repeat;
     animation-duration: 400ms;
     animation-delay: 1000ms;
     animation-fill-mode: both;
@@ -155,35 +145,32 @@ a {
     transition-duration: 300ms;
 }
 .main-menu__menu-panel {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
-    transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
-    background: rgba(11, 18, 40, 0.92);
+    background: hsla(225, 57%, 10%, 0.9);
+    transform: translate(110%);
 }
-
 .is-open .main-menu__menu-panel {
     display: block;
     transform: translate(0);
 }
-
 .main-menu__menu-item {
     display: block;
     width: 100%;
     padding: 17px;
-    border-bottom: 1px solid rgba(33, 55, 120, 0.5);
-    font-size: 1rem;
+    border-bottom: 1px solid hsla(225, 57%, 30%, 0.5);
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
 }
 .main-menu__menu-item:hover,
 .main-menu__menu-item:focus {
-    background-color: #2E437C;
+    background-color: #2e437c;
     transition: all 0.5s;
 }
 .main-menu__close-btn {
@@ -192,28 +179,20 @@ a {
     right: 2px;
     width: 64px;
     height: 65px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
     background-image: url(../img/menu-close-btn.png );
-    background-position: center;
-    background-repeat: no-repeat;
     transform: scale(1);
     transition-duration: 500ms;
     cursor: pointer;
 }
-.main-menu__close-btn:hover {
+.main-menu__close-btn:hover, .main-menu__close-btn:focus {
     transform: scale(1.2);
     transition-duration: 500ms;
 }
+
 /* ----- MAIN ----- */
-.main {
-    padding: 90px 0;
-}
 .main__container {
     max-width: 840px;
-    margin: 0 auto;
-    padding: 0;
+    margin: 90px auto 40px auto;
 }
 .product-list {
     width: 100%;
@@ -246,13 +225,11 @@ a {
 }
 .product-list li a img {
     transform:scale(1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
-.product-list li a:hover img {
+.product-list li a:hover img, .product-list li a:focus img {
     transform:scale(1.1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .product-item {
     display: block;
@@ -272,30 +249,43 @@ a {
 
 /* ----- PRODUCT DETAIL ----- */
 .product-item--on-click {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     height: 361px;
     padding: 40px 20px;
     background-color: rgba(255,255,255,.6);
     text-align: left;
-    transition: all 1s;
-    opacity: 0;
 }
-
-.is-off .product-item--on-click {
-    display: none;
-    border: 1px solid #dddddd;
-}
-.is-on .product-item--on-click {
+.fade-in {
     display: block;
-    transition: all 1s;
-    opacity: 1;
+    animation-name: fade-in-ani;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
-
-
-.product-item__description {
+@keyframes fade-in-ani {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.fade-out {
     display: block;
+    animation-name: fade-out-ani;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes fade-out-ani {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 .product-item--on-click *::selection {
     background: navy;
@@ -322,28 +312,18 @@ a {
     font-size: 16px;
     line-height: 23px;
 }
-
-
 .product-item__close-btn {
     position: absolute;
     top: 0;
     right: 0;
     width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    background-color: transparent;    
+    height: 40px; 
     background-image: url(../img/detail-close.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
     transition-duration: 300ms;
     cursor: pointer;
 }
 .product-item__close-btn:hover {
     background-color: #e5e5e5;
-    transition-property: background-color;
     transition-timing-function: ease-in-out;
     transition-duration: 300ms;
 }
@@ -352,7 +332,8 @@ a {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 17px 40px;
+    height: 25%;
+    padding: 17px 25px;
     background-color: #f8f8f8;
     font-size: 0;
 }
@@ -361,6 +342,7 @@ a {
     margin: 0;
     font-size: 13px;
     line-height: 19px;
+    padding: 0 0 0 25px;
 }
 .product-item__nutrition-group dt {
     width: 70px;
@@ -368,11 +350,12 @@ a {
 .product-item__nutrition-group:nth-child(odd) {
     border-right: 1px solid #999;
 }
-.product-item__nutrition-group dt {
-}
-.product-item__nutrition-group:nth-child(even) {
-    padding: 0 0 0 25px;
-}
 .product-item__nutrition-info * {
     display: inline-block;
+}
+/* ----- MOBILE DEVICE ----- */
+@media screen and (max-width: 559px) { 
+    .product-list li {
+        width: 100%;
+    }
 }
