@@ -210,11 +210,6 @@ a {
     animation-duration: 1000ms;
     animation-fill-mode: both;
 }
-@media screen and (max-width: 559px) { 
-    .product-list li {
-        width: 100%;
-    }
-}
 @keyframes product-animation {
     0% {
         top: 50px;
@@ -229,12 +224,10 @@ a {
     margin-right: 0;
 }
 .product-list li a img {
-    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1);
     transition-duration: 300ms;
 }
 .product-list li a:hover img, .product-list li a:focus img {
-    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1.1);
     transition-duration: 300ms;
 }
@@ -294,19 +287,6 @@ a {
         opacity: 0;
     }
 }
-
-/* .is-off .product-item--on-click {
-    display: none;
-    border: 1px solid #dddddd;
-}
-.is-on .product-item--on-click {
-    display: block;
-    transition: all 0.5s;
-    opacity: 1;
-} */
-.product-item__description {
-    display: block;
-}
 .product-item--on-click *::selection {
     background: navy;
     color: #fff;
@@ -333,7 +313,6 @@ a {
     line-height: 23px;
 }
 .product-item__close-btn {
-    /* 2020-02-12 YSK 버튼 디자인, 애니메이션 설정 */
     position: absolute;
     top: 0;
     right: 0;
@@ -344,12 +323,10 @@ a {
     cursor: pointer;
 }
 .product-item__close-btn:hover {
-    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
     background-color: #e5e5e5;
     transition-timing-function: ease-in-out;
     transition-duration: 300ms;
 }
-
 .product-item__nutrition-info {
     position: absolute;
     right: 0;
@@ -365,7 +342,6 @@ a {
     margin: 0;
     font-size: 13px;
     line-height: 19px;
-    
     padding: 0 0 0 25px;
 }
 .product-item__nutrition-group dt {
@@ -374,41 +350,12 @@ a {
 .product-item__nutrition-group:nth-child(odd) {
     border-right: 1px solid #999;
 }
-/* .product-item__nutrition-group dt {
-}
-.product-item__nutrition-group:nth-child(even) {
-    padding: 0 0 0 25px;
-} */
 .product-item__nutrition-info * {
     display: inline-block;
 }
-/* .product-item__nutrition-info {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 25%;
-    padding: 17px 40px;
-    background-color: #f8f8f8;
-    font-size: 0;
+/* ----- MOBILE DEVICE ----- */
+@media screen and (max-width: 559px) { 
+    .product-list li {
+        width: 100%;
+    }
 }
-.product-item__nutrition-group {
-    width: 50%;
-    margin: 0;
-    font-size: 13px;
-    line-height: 19px;
-}
-.product-item__nutrition-group dt {
-    width: 70px;
-}
-.product-item__nutrition-group:nth-child(odd) {
-    border-right: 1px solid #999;
-}
-.product-item__nutrition-group dt {
-}
-.product-item__nutrition-group:nth-child(even) {
-    padding: 0 0 0 25px;
-}
-.product-item__nutrition-info * {
-    display: inline-block;
-} */
