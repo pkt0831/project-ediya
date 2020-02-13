@@ -195,7 +195,7 @@ a {
     padding: 0;
     border: none;
     background-color: transparent;
-    background-image: url(../img/menu-close-btn.png);
+    background-image: url(../img/menu-close-btn.png );
     background-position: center;
     background-repeat: no-repeat;
     transform: scale(1);
@@ -279,13 +279,18 @@ a {
     padding: 40px 20px;
     background-color: rgba(255,255,255,.6);
     text-align: left;
-    transition: all 3s;
+    transition: all 1s;
     opacity: 0;
 }
 
 .is-off .product-item--on-click {
     display: none;
     border: 1px solid #dddddd;
+}
+.is-on .product-item--on-click {
+    display: block;
+    transition: all 1s;
+    opacity: 1;
 }
 
 
@@ -317,12 +322,7 @@ a {
     font-size: 16px;
     line-height: 23px;
 }
-.is-on .product-item--on-click {
-    display: block;
-    transition: all 3s;
-    opacity: 1;
- 
-}
+
 
 .product-item__close-btn {
     position: absolute;
