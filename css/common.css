@@ -155,7 +155,7 @@ a {
     transition-duration: 300ms;
 }
 .main-menu__menu-panel {
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 0;
     right: 0;
