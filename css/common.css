@@ -242,12 +242,10 @@ a {
     margin-right: 0;
 }
 .product-list li a img {
-    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1);
     transition-duration: 300ms;
 }
 .product-list li a:hover img, .product-list li a:focus img {
-    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1.1);
     transition-duration: 300ms;
 }
@@ -289,9 +287,9 @@ a {
     transition: all 0.5s;
     opacity: 1;
 }
-.product-item__description {
+/* .product-item__description {
     display: block;
-}
+} */
 .product-item--on-click *::selection {
     background: navy;
     color: #fff;
