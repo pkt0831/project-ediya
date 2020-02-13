@@ -13,15 +13,15 @@
     <link rel="stylesheet" href="./css/common.css">
     <!-- Small Screen(559px까지) - 1단 레이아웃
 Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
-    <link rel="stylesheet" href="./css/device-s.css" media="screen and (max-width: 559px)">
-    <link rel="stylesheet" href="./css/device-m.css" media="screen and (min-width: 560px)">
+    <!-- <link rel="stylesheet" href="./css/device-s.css" media="screen and (max-width: 559px)">
+    <link rel="stylesheet" href="./css/device-m.css" media="screen and (min-width: 560px)"> -->
     <script src="./js/main.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
     <header class="header">
         <h1 class="logo">
-            <a href="#">
+            <a href="#" class="logo__link">
                 이디야커피
                 <img src="img/ediya-logo.gif" alt="">
             </a>
@@ -32,43 +32,43 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
             <h2 class="a11y-hidden">
                 사이트 메인 메뉴
             </h2>
-            <button class="main-menu__open-btn btn-text-hide">
+            <button class="main-menu__open-btn btn__text--hide btn--style">
                 사이트 메뉴 열기
             </button>
             <div class="main-menu__menu-panel" aria-hidden="true">
                 <ul class="main-menu__menu-list">
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     메뉴
                     </a>
                     </li>
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     이디야멤버스
                     </a>
                     </li>
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     이디야커피랩
                     </a>
                     </li>
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     이디야컬쳐랩
                     </a>
                     </li>
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     공지사항
                     </a>
                     </li>
                     <li>
-                    <a href="#" class="main-menu__menu-item">
+                    <a href="#" class="main-menu__menu-item" tabindex="-1">
                     매장찾기
                     </a>
                     </li>
                 </ul>
-                <button class="main-menu__close-btn btn-text-hide">
+                <button class="main-menu__close-btn btn__text--hide btn--style" tabindex="-1">
                 사이트 메뉴 닫기
                 </button>
             </div>
@@ -91,7 +91,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/iced-cherry-blossoms-latte.png" alt="ICED 벚꽃라떼" class="responsive">
                     </a>
-                    <div id="icedCherryBlossomLatte" class="product-item--on-click">
+                    <div id="icedCherryBlossomLatte" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -115,6 +115,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>18.6
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -122,6 +123,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>35
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -129,6 +131,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>149
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -136,6 +139,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>7
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -143,11 +147,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -160,7 +165,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/hot-cherry-blossoms-latte.png" alt="HOT 벚꽃라떼" class="responsive">
                     </a>
-                    <div id="hotCherryBlossomLatte" class="product-item--on-click">
+                    <div id="hotCherryBlossomLatte" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -184,6 +189,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>19.0
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -191,6 +197,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>38
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -198,6 +205,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>190
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -205,6 +213,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>10
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -212,11 +221,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -229,7 +239,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/iced-brownie-chocolate.png" alt="ICED 브라우니 쇼콜라" class="responsive">
                     </a>
-                    <div id="icedBrownieChocolate" class="product-item--on-click">
+                    <div id="icedBrownieChocolate" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -253,6 +263,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>20.8
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -260,6 +271,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>42
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -267,6 +279,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>262
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -274,6 +287,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>9
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -281,11 +295,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>12
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -298,7 +313,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/hot-brownie-chocolate.png" alt="HOT 브라우니 쇼콜라" class="responsive">
                     </a>
-                    <div id="HotBrownieChocolate" class="product-item--on-click">
+                    <div id="HotBrownieChocolate" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -322,6 +337,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>20.9
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -329,6 +345,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>42
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -336,6 +353,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>299
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -343,6 +361,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>9
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -350,11 +369,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>12
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -368,7 +388,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         <img src="./img/jeju-green-tangerine-tea.png" alt="제주청귤 오리지널" class="responsive">
                          <!--2020-02-13 PKT 368번째 줄 Unicode form C 오류  -->
                     </a>
-                    <div id="jejuGreenTangerineTea" class="product-item--on-click">
+                    <div id="jejuGreenTangerineTea" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -393,6 +413,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0.1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -400,6 +421,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>51
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -407,6 +429,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>4
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -414,6 +437,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -421,11 +445,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -439,7 +464,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         <img src="./img/jeju-green-tangerine-blossom.png" alt="제주청귤 블라썸" class="responsive">
                         <!-- 2020-02-13 PKT 439번째 줄 Unicode form C 오류. -->
                     </a>
-                    <div id="jejuGreenTangerineBlossom" class="product-item--on-click">
+                    <div id="jejuGreenTangerineBlossom" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -464,6 +489,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0.1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -471,6 +497,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>46
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -478,6 +505,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>5
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -485,6 +513,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -492,11 +521,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -509,7 +539,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/pomegranate-tea.png" alt="석류 오리지널" class="responsive">
                     </a>
-                    <div id="pomegranateTea" class="product-item--on-click">
+                    <div id="pomegranateTea" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -533,6 +563,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0.1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -540,6 +571,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>42
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -547,6 +579,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>5
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -554,6 +587,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -561,11 +595,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -578,7 +613,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                         </h3>
                         <img src="./img/pomegranate-apple-lime.png" alt="석류 애플라임" class="responsive">
                     </a>
-                    <div id="pomegranateAppleLime" class="product-item--on-click">
+                    <div id="pomegranateAppleLime" class="product-item--on-click" aria-hidden="true">
                         <span class="a11y-hidden">
                             상세설명
                         </span>
@@ -602,6 +637,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>포화지방</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0.1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -609,6 +645,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>당류</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>42
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -616,6 +653,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>나트륨</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>7
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
@@ -623,6 +661,7 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>단백질</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>1
+                                    <span class="a11y-hidden">그램</span>
                                     <span aria-hidden="true">g&rpar;</span>
                                 </dd>
                             </div>
@@ -630,11 +669,12 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
                                 <dt>카페인</dt>
                                 <dd>
                                     <span aria-hidden="true">&lpar;</span>0
+                                    <span class="a11y-hidden">밀리그램</span>
                                     <span aria-hidden="true">mg&rpar;</span>
                                 </dd>
                             </div>
                         </dl>
-                        <button class="product-item__close-btn btn-text-hide">
+                        <button class="product-item__close-btn btn__text--hide btn--style">
                             상세설명 닫기
                         </button>
                     </div>
@@ -643,4 +683,4 @@ Large Screen(560px 이상 840px 이하) - 2단 레이아웃 -->
         </div>
     </main>
 </body>
-</html>
+</html>                                                                                  
