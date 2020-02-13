@@ -50,19 +50,18 @@ function openMenuPanel(e) {
 
 // 메인메뉴창 닫기버튼을 누르면 창이 닫힘
 function closeMenuPanel(e) {
-    // console.log(33);
-    
-    // let mainMenu = nav.querySelector('.main_menu')
-    // mainMenu.classList.remove('is-open')
     menuPanel.style.transition = 'all 0.7s';
     nav.classList.remove('is-open');
 }
 
 // 음료를 클릭할때 상세설명창이 올라옴
 function ItemOn(e) {
-  let _this = e.target;
-  let _parent = _this.closest('li');
-  _parent.classList.add('is-on');
+    e.preventDefault();
+    let _this = e.target;
+    let _parent = _this.closest('li');
+    _parent.classList.add('is-on');
+    _parent.classList.remove('is-off');
+   
 }
 
 // 상세설명창 닫기 버튼을 누르면 상세설명창이 사라짐
@@ -70,8 +69,12 @@ function ItemOff(e) {
     let _this = e.target;
     let _parent = _this.closest('li');
     e.stopPropagation();
-    _parent.classList.remove('is-on'); 
+    _parent.classList.remove('is-on');
+    let itemDelay = window.setTimeout(function() {
+        _parent.classList.add('is-off');
+    }, 1000);
 }
+
 
 
 
