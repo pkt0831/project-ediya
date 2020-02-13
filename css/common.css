@@ -166,12 +166,10 @@ a {
     padding: 60px 0 0 0;
     background: rgba(11, 18, 40, 0.92);
 }
-
 .is-open .main-menu__menu-panel {
     display: block;
     transform: translate(0);
 }
-
 .main-menu__menu-item {
     display: block;
     width: 100%;
@@ -206,13 +204,14 @@ a {
     transform: scale(1.2);
     transition-duration: 500ms;
 }
+
 /* ----- MAIN ----- */
 .main {
-    padding: 90px 0;
+    padding: 0 0;
 }
 .main__container {
     max-width: 840px;
-    margin: 0 auto;
+    margin: 90px auto;
     padding: 0;
 }
 .product-list {
