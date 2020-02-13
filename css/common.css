@@ -20,19 +20,19 @@ body *, body *::before, body *::after {
     /* 2020-02-13 PKT clip-path 존재하지않는 속성이라고 뜸. 권장사항이고, CSS유효검사기에서는 아직 제정된 규칙이 아니라고 함.*/
 }
 /* BUTTON TEXT HIDDEN */
-.btn-text-hide {
-    font-size: 1px;
+.btn__text--hide {
     text-indent: -200px;
+    font-size: 1px;
     overflow: hidden;
-    /* display: inline-block;
-    margin: 0;
+}
+/* BUTTON STYLE */
+.btn--style {
+    /* 2020-02-13 YSK 버튼 모듈화 */
     border: none;
-    width: 100px;
-    height: 0;
-    padding-top: 100px;
-    overflow: hidden; 
-    vertical-align: middle;
-    font-size: 1px; */
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
 /* CLEAR FIX */
 .clearfix::after {
@@ -55,20 +55,18 @@ a {
     color: inherit;
     text-decoration: none;
 }
-/* ----- HEADER ----- */
 
+/* ----- HEADER ----- */
 .header {
     /* 2020-02-12 PKT 헤더 애니메이션 동작 작성. */
     position: fixed;
-    z-index: 999;
-    /* 2020-02-13 PKT zindex 최소10,최고100,10단위로 증감하기로했는데 999임.수정 요망. */
+    z-index: 10;
     width: 100%;
     padding: 20.5px 26px;
     border-bottom: 1px solid #E0E0E0;
     background-color: rgba(255, 255, 255, .7);
     animation-name: ani-header;
     animation-duration: 700ms;
-    /* animation-delay: 300ms; */
     animation-fill-mode: both;
 }
 @keyframes ani-header {
@@ -105,13 +103,13 @@ a {
         left: 0px;
         opacity: 1;
     }
-  } 
+} 
 .logo a {
-    position: absolute;
     display: block;
+    /* position: absolute; */
     padding: 5px 0;
     text-indent: 1rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .logo img {
     position: absolute;
@@ -121,21 +119,15 @@ a {
 }
 .main-menu__open-btn {
     /* 2020-02-12 PKT 오픈버튼 우측 화면 밖에서 안쪽으로 애니메이션 작성. */
+    /* 2020-02-12 YSK 버튼 디자인 설정 */
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 67px;
     height: 100%;
-    padding: 0;
-    border: none;
-    background-color: white;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    transition-duration: 300ms;
     background-image: url(../img/menu-open-btn.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    transition-duration: 300ms;
     animation-duration: 400ms;
     animation-delay: 1000ms;
     animation-fill-mode: both;
@@ -156,6 +148,7 @@ a {
     }
 }
 .main-menu__open-btn:hover {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
     background-color: #e5e5e5;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
@@ -168,10 +161,10 @@ a {
     right: 0;
     width: 100%;
     height: 100vh;
-    transform: translate(100%);
     margin: 0;
     padding: 60px 0 0 0;
     background: rgba(11, 18, 40, 0.92);
+    transform: translate(100%);
 }
 .is-open .main-menu__menu-panel {
     display: block;
@@ -192,33 +185,27 @@ a {
     transition: all 0.5s;
 }
 .main-menu__close-btn {
+    /* 2020-02-12 YSK 버튼 디자인, 애니메이션 설정 */
     position: absolute;
     top: 2px;
     right: 2px;
     width: 64px;
     height: 65px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    background-image: url(../img/menu-close-btn.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url(../img/menu-close-btn.png );
     transform: scale(1);
     transition-duration: 500ms;
     cursor: pointer;
 }
 .main-menu__close-btn:hover {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
     transform: scale(1.2);
     transition-duration: 500ms;
 }
 
 /* ----- MAIN ----- */
-.main {
-    padding: 0 0;
-}
 .main__container {
     max-width: 840px;
-    margin: 90px auto;
+    margin: 90px auto 40px auto;
     padding: 0;
 }
 .product-list {
@@ -251,14 +238,14 @@ a {
     margin-right: 0;
 }
 .product-list li a img {
+    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .product-list li a:hover img {
+    /* 2020-02-12 YSK 이미지 애니메이션 작성 */
     transform:scale(1.1);
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
 }
 .product-item {
     display: block;
@@ -285,16 +272,18 @@ a {
     padding: 40px 20px;
     background-color: rgba(255,255,255,.6);
     text-align: left;
-    transition: all 3s;
+    transition: all 1s;
     opacity: 0;
 }
-
 .is-off .product-item--on-click {
     display: none;
     border: 1px solid #dddddd;
 }
-
-
+.is-on .product-item--on-click {
+    display: block;
+    transition: all 1s;
+    opacity: 1;
+}
 .product-item__description {
     display: block;
 }
@@ -323,42 +312,62 @@ a {
     font-size: 16px;
     line-height: 23px;
 }
-.is-on .product-item--on-click {
-    display: block;
-    transition: all 3s;
-    opacity: 1;
- 
-}
-
 .product-item__close-btn {
+    /* 2020-02-12 YSK 버튼 디자인, 애니메이션 설정 */
     position: absolute;
     top: 0;
     right: 0;
     width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    background-color: transparent;    
+    height: 40px; 
     background-image: url(../img/detail-close.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
     transition-duration: 300ms;
     cursor: pointer;
 }
 .product-item__close-btn:hover {
+    /* 2020-02-12 YSK 버튼 애니메이션 설정 */
     background-color: #e5e5e5;
-    transition-property: background-color;
-    /*2020-02-13 PKT bug-fix transition-property 이부분 CSS 유효성 검사 걸림 작동안함 삭제요망. */
     transition-timing-function: ease-in-out;
     transition-duration: 300ms;
 }
+
 .product-item__nutrition-info {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    height: 25%;
+    padding: 17px 25px;
+    background-color: #f8f8f8;
+    font-size: 0;
+}
+.product-item__nutrition-group {
+    width: 50%;
+    margin: 0;
+    font-size: 13px;
+    line-height: 19px;
+    
+    padding: 0 0 0 25px;
+}
+.product-item__nutrition-group dt {
+    width: 70px;
+}
+.product-item__nutrition-group:nth-child(odd) {
+    border-right: 1px solid #999;
+}
+/* .product-item__nutrition-group dt {
+}
+.product-item__nutrition-group:nth-child(even) {
+    padding: 0 0 0 25px;
+} */
+.product-item__nutrition-info * {
+    display: inline-block;
+}
+/* .product-item__nutrition-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 25%;
     padding: 17px 40px;
     background-color: #f8f8f8;
     font-size: 0;
@@ -382,4 +391,4 @@ a {
 }
 .product-item__nutrition-info * {
     display: inline-block;
-}
+} */
