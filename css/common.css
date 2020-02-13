@@ -321,19 +321,19 @@ a {
 }
 .product-item__close-btn {
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 0;
+    right: 0;
     width: 40px;
     height: 40px;
     padding: 0;
     border: none;
-    background-color: transparent;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    transition-duration: 300ms;
+    background-color: transparent;    
     background-image: url(../img/detail-close.png);
     background-position: center;
     background-repeat: no-repeat;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
     cursor: pointer;
 }
 .product-item__close-btn:hover {
