@@ -60,8 +60,13 @@ function ItemOn(e) {
     e.preventDefault();
     let _this = e.target;
     let _parent = _this.closest('li');
-    _parent.classList.add('is-on');
-    // _parent.classList.remove('is-off');
+    _parent.classList.remove('is-off');
+
+    let itemDelay = window.setTimeout(function() {
+        _parent.classList.add('is-on');
+        let _container = _parent.querySelector('div');
+        _container.setAttribute('aria-hidden', 'false');
+    }, 100);
    
 }
 
@@ -73,6 +78,8 @@ function ItemOff(e) {
     _parent.classList.remove('is-on');
     let itemDelay = window.setTimeout(function() {
         _parent.classList.add('is-off');
+        let _container = _this.closest('div');
+        _container.setAttribute('aria-hidden', 'true');
     }, 1000);
 }
 
