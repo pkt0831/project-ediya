@@ -42,7 +42,7 @@ function render() {
 function openMenuPanel(e) {
 
     menuPanel.style.transition = 'all 0.7s';
-
+    menuPanel.setAttribute('aria-hidden','false');
     // _this.parentNode.classList.add('is-open')
     nav.classList.add('is-open');
 
@@ -51,6 +51,7 @@ function openMenuPanel(e) {
 // 메인메뉴창 닫기버튼을 누르면 창이 닫힘
 function closeMenuPanel(e) {
     menuPanel.style.transition = 'all 0.7s';
+    menuPanel.setAttribute('aria-hidden', 'true');
     nav.classList.remove('is-open');
 }
 
@@ -60,6 +61,7 @@ function ItemOn(e) {
     let _this = e.target;
     let _parent = _this.closest('li');
     _parent.classList.add('is-on');
+    _parent.classList.remove('is-off');
    
 }
 
