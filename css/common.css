@@ -47,9 +47,7 @@ button:focus,
 a:focus {
     outline-color: #0050cd;
 }
-.product-item:focus {
-    outline: none;
-}
+
 /* BASIC */
 a {
     color: inherit;
