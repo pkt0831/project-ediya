@@ -1,6 +1,6 @@
 # project-ediya
 ediya 프로토타입을 보고 사이트를 구현하는 미니프로젝트 입니다.
-![캡처_2020_05_10_19_48_44_511](https://user-images.githubusercontent.com/56964928/81497140-8be77280-92f7-11ea-903c-22ab2dedd744.png)
+![캡처_2020_05_10_19_56_01_410](https://user-images.githubusercontent.com/56964928/81497301-8b031080-92f8-11ea-9796-5e4694139a3b.png)
 <br><br>
 ## 전체 발표 자료는 ediya-pt.key 키노트 파일에 있습니다.
 <br><br>
